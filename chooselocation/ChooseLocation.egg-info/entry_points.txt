@@ -1,0 +1,8 @@
+
+    [deluge.plugin.core]
+    ChooseLocation = chooselocation:CorePlugin
+    [deluge.plugin.gtkui]
+    ChooseLocation = chooselocation:GtkUIPlugin
+    [deluge.plugin.web]
+    ChooseLocation = chooselocation:WebUIPlugin
+    
