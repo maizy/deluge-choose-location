@@ -40,11 +40,11 @@ ChooseLocationPlugin = Ext.extend(Deluge.Plugin, {
     },
 
     onDisable: function() {
-
+        console.debug('disabled');
     },
 
     onEnable: function() {
-
+        console.debug('enebled');
     }
 });
 new ChooseLocationPlugin();

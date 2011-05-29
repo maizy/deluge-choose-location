@@ -44,7 +44,7 @@ import deluge.configmanager
 from deluge.core.rpcserver import export
 
 DEFAULT_PREFS = {
-    "test":"NiNiNi"
+    "backend_version":"NiNiNi"
 }
 
 class Core(CorePluginBase):
@@ -59,12 +59,19 @@ class Core(CorePluginBase):
 
     @export
     def set_config(self, config):
-        """Sets the config dictionary"""
+        "sets the config dictionary"
         for key in config.keys():
             self.config[key] = config[key]
         self.config.save()
 
     @export
     def get_config(self):
-        """Returns the config dictionary"""
+        "returns the config dictionary"
         return self.config.config
+
+    @export
+    def get_dirs(self, location):
+        return [
+                {'location': 'test', 'leaf': False},
+                {'location': location, 'leaf': False},
+        ]
