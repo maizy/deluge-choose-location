@@ -1,10 +1,10 @@
 Metadata-Version: 1.0
 Name: ChooseLocation
 Version: 0.1
-Summary: UNKNOWN
-Home-page: UNKNOWN
+Summary: AJAX Choose location when create or move torrent in web-ui
+Home-page: http://dev.maizy.ru/
 Author: Kovaliov Nikita
 Author-email: dev@maizy.ru
 License: GPLv3
-Description: UNKNOWN
+Description: AJAX Choose location when create or move torrent in web-ui
 Platform: UNKNOWN

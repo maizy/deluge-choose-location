@@ -44,9 +44,9 @@ __plugin_name__ = "ChooseLocation"
 __author__ = "Kovaliov Nikita"
 __author_email__ = "dev@maizy.ru"
 __version__ = "0.1"
-__url__ = ""
+__url__ = "http://dev.maizy.ru/"
 __license__ = "GPLv3"
-__description__ = ""
+__description__ = "AJAX Choose location when create or move torrent in web-ui"
 __long_description__ = """"""
 __pkg_data__ = {__plugin_name__.lower(): ["template/*", "data/*"]}
 
