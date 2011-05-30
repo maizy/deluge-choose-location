@@ -42,9 +42,10 @@ from deluge.plugins.pluginbase import CorePluginBase
 import deluge.component as component
 import deluge.configmanager
 from deluge.core.rpcserver import export
+import os
 
 DEFAULT_PREFS = {
-    "test":"NiNiNi"
+    'allowed_base_paths': '/', #divided by :
 }
 
 class Core(CorePluginBase):
@@ -68,3 +69,42 @@ class Core(CorePluginBase):
     def get_config(self):
         """Returns the config dictionary"""
         return self.config.config
+
+    @export
+    def get_dirs(self, base_location=u"/"):
+        base_location = unicode(base_location)
+
+        result = []
+        try:
+            dirs = [ent for ent
+                        in os.listdir(base_location)
+                        if ent[0] != '.' and os.path.isdir(os.path.join(base_location, ent))]
+            dirs.sort()
+            for name in dirs:
+                abs_path = os.path.join(base_location, name)
+                try:
+                    has_children = bool(os.listdir(abs_path))
+                except OSError:
+                    has_children = False
+
+                result.append({
+                    'path': abs_path,
+                    'name': name,
+                    'has_children': has_children,
+                })
+        except OSError:
+            pass
+        
+        return result
+
+
+if __name__ == '__main__':
+
+    def dump(slf, pluginname):
+        pass
+    Core.__init__ = dump
+
+    core = Core('chooselocation')
+
+    print core.get_dirs()
+    print core.get_dirs('/mnt/R2D2')

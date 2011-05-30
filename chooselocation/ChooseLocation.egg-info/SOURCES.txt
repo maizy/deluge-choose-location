@@ -1,3 +1,4 @@
+create_dev_link.sh
 setup.py
 ChooseLocation.egg-info/PKG-INFO
 ChooseLocation.egg-info/SOURCES.txt
@@ -9,3 +10,5 @@ chooselocation/common.py
 chooselocation/core.py
 chooselocation/gtkui.py
 chooselocation/webui.py
+chooselocation/data/chooselocation.js
+chooselocation/data/config.glade
