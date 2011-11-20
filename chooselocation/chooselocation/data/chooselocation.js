@@ -33,14 +33,33 @@ Copyright:
 
 ChooseLocationPlugin = Ext.extend(Deluge.Plugin, {
     constructor: function(config) {
+        var self = this;
         config = Ext.apply({
             name: "ChooseLocation"
         }, config);
         ChooseLocationPlugin.superclass.constructor.call(this, config);
+
+        this.debug('config: ', config);
+
+        this._patchAddWindow();
+        this._patchMoveWindow();
+
+    },
+
+    debug: function() {
+        window.console && window.console.debug
+            && window.console.debug.apply(window.console.debug, arguments)
+    },
+
+    _patchAddWindow: function() {
+
+    },
+
+    _patchMoveWindow: function() {
+
     },
 
     onDisable: function() {
-
     },
 
     onEnable: function() {
